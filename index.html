@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R3 Coffee &amp; Roasters — Café de especialidad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand" data-tab="inicio">
+      <span class="stamp"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M7 3c0 1 1 1 1 2s-1 1-1 2M11 3c0 1 1 1 1 2s-1 1-1 2"/></svg></span>
+      <strong>R3 COFFEE &amp; ROASTERS</strong>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><button class="nav-link active" data-tab="inicio">Inicio</button></li>
+      <li><button class="nav-link" data-tab="nosotros">Nosotros</button></li>
+      <li><button class="nav-link" data-tab="locales">Locales</button></li>
+      <li><button class="nav-link" data-tab="carta">Carta</button></li>
+      <li><button class="nav-link" data-tab="resenas">Reseñas</button></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-btn" onclick="toggleCart(true)">Pedido <span class="cart-count" id="cartCount">0</span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+<section id="tab-inicio" class="tab-panel active" data-tab-panel="inicio">
+<section class="hero" id="top">
+  <div class="bg-photo">
+    <!-- FOTOGRAFÍA DE EJEMPLO: reemplazar por foto real de barra/tueste en producción -->
+    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1600&auto=format&fit=crop" alt="">
+  </div>
+  <div class="hero-stamp stamp"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M7 3c0 1 1 1 1 2s-1 1-1 2M11 3c0 1 1 1 1 2s-1 1-1 2"/></svg></div>
+  <span class="eyebrow">Café de especialidad · Tostaduría</span>
+  <h1>R3 Coffee &amp; Roasters</h1>
+  <p class="tagline">Tostamos nuestro propio café en Santiago Centro desde 2022. Reducir, reutilizar y reciclar son las 3 R que le dan nombre a este proyecto de Julián y Yoseidy — dos baristas, tres locales, y una obsesión compartida por el buen grano.</p>
+  <div class="hero-info">
+    <div class="hero-pill"><span class="status-dot" id="statusDot"></span> <span id="statusText">Consultando horario…</span></div>
+    <div class="hero-pill">★ <strong>4.9</strong> (916 opiniones · Miraflores)</div>
+    <div class="hero-pill"><strong>3 locales</strong> en Santiago Centro</div>
+    <div class="hero-pill"><strong>Desde 2022</strong> tueste propio</div>
+  </div>
+  <div class="cta-row">
+    <button class="btn btn-solid" data-tab="carta">Ver la carta</button>
+    <button class="btn btn-outline" data-tab="locales">Ver los 3 locales</button>
+  </div>
+</section>
+</section>
+
+<section id="tab-nosotros" class="tab-panel" data-tab-panel="nosotros">
+<section id="nosotros">
+  <div class="wrap sobre">
+    <span class="eyebrow" style="color:var(--gold);">quiénes somos</span>
+    <h2 style="margin-bottom:20px;">Dos baristas, un tueste propio</h2>
+    <p>Julián Lahm llegó desde Curitiba, Brasil, y Yoseidy Gutiérrez desde Mérida, Venezuela. Los dos se formaron como baristas en otras cafeterías de Santiago antes de juntarse para abrir R3 en 2022, en el barrio Bellas Artes. El nombre viene de las tres R de la sustentabilidad — reducir, reutilizar, reciclar — que se nota en los filtros de algodón reutilizables y los vasos de bambú que usan en el día a día. Hoy atienden ellos mismos la barra en sus tres locales, y suelen saludar por su nombre a quienes ya son clientes habituales.</p>
+    <div class="badges-row">
+      <span class="badge" style="border-color:rgba(76,122,63,0.4); color:var(--green); background:rgba(76,122,63,0.06);">LGBTQ+ friendly</span>
+      <span class="badge" style="border-color:rgba(76,122,63,0.4); color:var(--green); background:rgba(76,122,63,0.06);">Espacio seguro trans</span>
+      <span class="badge" style="border-color:rgba(185,131,47,0.5); color:var(--gold); background:rgba(185,131,47,0.06);">Liderado por una mujer</span>
+      <span class="badge" style="border-color:rgba(185,131,47,0.5); color:var(--gold); background:rgba(185,131,47,0.06);">Pet friendly</span>
+      <span class="badge" style="border-color:rgba(24,43,82,0.3); color:var(--navy); background:rgba(24,43,82,0.05);">Accesible en silla de ruedas</span>
+      <span class="badge" style="border-color:rgba(24,43,82,0.3); color:var(--navy); background:rgba(24,43,82,0.05);">Wi-Fi gratis</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="stamp" style="width:34px;height:34px; color:var(--navy);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.6"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M7 3c0 1 1 1 1 2s-1 1-1 2M11 3c0 1 1 1 1 2s-1 1-1 2"/></svg></span></div>
+
+<section style="background:var(--navy); color:var(--white);">
+  <div class="wrap dark">
+    <div class="section-head dark">
+      <span class="eyebrow">para chusmear</span>
+      <h2>Dentro de la barra</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Latte art"><div class="gallery-tag">Latte art de la casa</div></figure>
+      <figure><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=800&auto=format&fit=crop" alt="Tueste de café"><div class="gallery-tag">Tueste propio</div></figure>
+      <figure><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=800&auto=format&fit=crop" alt="Vitrina de pastelería"><div class="gallery-tag">Pastelería del día</div></figure>
+      <figure><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Barra de café"><div class="gallery-tag">Barra y baristas</div></figure>
+    </div>
+    <!-- FOTOGRAFÍAS DE EJEMPLO (Unsplash): reemplazar por fotos reales de cada local antes de la entrega final -->
+  </div>
+</section>
+</section>
+
+<section id="tab-locales" class="tab-panel" data-tab-panel="locales">
+<section id="locales" style="background:linear-gradient(180deg, var(--navy-2), var(--navy)); color:var(--white);">
+  <div class="wrap">
+    <div class="section-head dark">
+      <span class="eyebrow">te esperamos</span>
+      <h2>Nuestros 3 locales</h2>
+    </div>
+    <div class="loc-cards-grid" id="locCards"></div>
+  </div>
+</section>
+</section>
+
+<section id="tab-carta" class="tab-panel" data-tab-panel="carta">
+<section id="carta" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">la carta</span>
+      <h2>Nuestra carta</h2>
+    </div>
+    <div class="menu-tabs" id="menuTabs"></div>
+    <p class="menu-note-top">Ofrecemos distintos orígenes de café durante todo el año — pregunta a nuestros baristas por una recomendación.</p>
+    <div id="menuPanels"></div>
+    <p class="menu-note">Precios pueden variar levemente entre locales. Consulta por opciones veganas y sin gluten en el mesón.</p>
+  </div>
+</section>
+</section>
+
+<section id="tab-resenas" class="tab-panel" data-tab-panel="resenas">
+<section id="resenas">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">lo que dicen</span>
+      <h2>Opiniones de los 3 locales</h2>
+    </div>
+    <div class="resenas-grid">
+      <div class="resena">
+        <span class="resena-loc">Miraflores 537</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>"La gente dice que esta cafetería sirve delicioso café de especialidad, incluyendo flat whites, capuchinos y espresso tonics, así como pasteles como canelés y pastel de limón. Destacan los precios razonables y el ambiente acogedor y agradable. También les gusta el servicio amable y atento que brinda el personal."</blockquote>
+        <footer>— Resumen de Google Maps · 4.9 / 5 (916 opiniones)</footer>
+      </div>
+      <div class="resena">
+        <span class="resena-loc">Merced 649</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>"Lo mejor del local son los trabajadores, siempre son muy amables, te reciben y hacen los pedidos con muy buena energía. Me gusta mucho el matcha, la leche de avena que usan es muy buena, no me gusta mucho el sabor específico del café que usan, es como sabor frutal o floral que en lo personal no es mi favorito, a mi mamá le encanta, pero en general todo muy rico y ambiente agradable."</blockquote>
+        <footer>— Camila Silva, Google Maps · Comida 4 · Servicio 5 · Ambiente 5</footer>
+      </div>
+      <div class="resena">
+        <span class="resena-loc">Londres 42</span>
+        <div class="stars">★★★★★</div>
+        <blockquote>"Los comensales dicen que les gusta el café de alta calidad de esta cafetería, el cual muchos describen como delicioso y bien equilibrado, junto con sabrosos productos de pastelería como pan de queso y croissants. Aprecian también el ambiente agradable y acogedor, y a menudo mencionan el espacio limpio y la buena música. Los clientes elogian constantemente al personal por ser amable, atento y por brindar un servicio excelente."</blockquote>
+        <footer>— Resumen de Google Maps · 175 opiniones</footer>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="stamp footer-stamp"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M7 3c0 1 1 1 1 2s-1 1-1 2M11 3c0 1 1 1 1 2s-1 1-1 2"/></svg></span>
+    <h3 class="footer-brand">R3 Coffee &amp; Roasters</h3>
+    <p class="footer-tag">Café de especialidad &amp; tostaduría en Santiago Centro desde 2022</p>
+    <div class="footer-badges">
+      <span class="badge" style="border-color:rgba(185,131,47,0.5); color:var(--gold); background:rgba(185,131,47,0.08);">Reservas por Instagram</span>
+      <span class="badge" style="border-color:rgba(250,246,236,0.3); color:rgba(250,246,236,0.85); background:rgba(250,246,236,0.05);">Tarjetas y pago con celular</span>
+      <span class="badge" style="border-color:rgba(250,246,236,0.3); color:rgba(250,246,236,0.85); background:rgba(250,246,236,0.05);">Estacionamiento pagado</span>
+      <span class="badge" style="border-color:rgba(250,246,236,0.3); color:rgba(250,246,236,0.85); background:rgba(250,246,236,0.05);">Wi-Fi gratis</span>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-links">
+      <a href="https://instagram.com/r3coffee_" target="_blank" rel="noopener">@r3coffee_</a>
+      <span>·</span>
+      <a href="https://www.r3coffee.cl" target="_blank" rel="noopener">r3coffee.cl</a>
+      <span>·</span>
+      <span>Sitio demo diseñado con cariño</span>
+    </div>
+  </div>
+</footer>
+
+<!-- OVERLAY CARRITO -->
+<div class="overlay" id="cartOverlay">
+  <div class="cart-panel">
+    <button class="close-x" onclick="toggleCart(false)">&times;</button>
+    <h3>Tu pedido</h3>
+    <div id="cartLines"><p class="cart-empty">Todavía no agregaste nada.</p></div>
+    <div class="cart-total"><span>Total</span><span class="mono" id="cartTotal">$0</span></div>
+    <a class="btn btn-solid" style="justify-content:center; margin-top:14px;" id="checkoutBtn" href="https://instagram.com/r3coffee_" target="_blank" rel="noopener">Consultar por Instagram</a>
+    <p class="cart-note">Este prototipo arma tu pedido y lo prepara para enviarlo. No se confirmó un WhatsApp oficial de pedidos, así que por ahora el botón te lleva al Instagram del local — reemplazar por el canal real antes de publicar.</p>
+  </div>
+</div>
+
+<!-- OVERLAY MODAL DE LOCAL -->
+<div class="overlay modal-overlay" id="locModalOverlay">
+  <div class="modal-box loc-modal-box">
+    <button class="close-x" onclick="toggleLocModal(false)">&times;</button>
+    <span class="eyebrow" id="locModalZone" style="color:var(--gold); font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase;"></span>
+    <h3 id="locModalName" style="margin-top:4px;"></h3>
+    <div class="loc-modal-grid">
+      <div class="info">
+        <h3>Dirección</h3>
+        <p id="locModalAddress"></p>
+        <h3>Horario</h3>
+        <p id="locModalHours"></p>
+        <h3>Ahora</h3>
+        <p class="mono" id="locModalStatus"></p>
+        <div class="loc-modal-actions">
+          <a class="btn btn-solid" id="locModalDirections" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe id="locModalMap" loading="lazy" src=""></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERLAY MODAL PRODUCTO -->
+<div class="overlay modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <button class="close-x" onclick="toggleModal(false)">&times;</button>
+    <h3 id="modalName"></h3>
+    <div class="price mono" id="modalPrice"></div>
+    <p class="desc" id="modalDesc"></p>
+    <button class="btn btn-solid" style="width:100%; justify-content:center; background:var(--navy); color:#fff;" id="modalAddBtn">Agregar al pedido</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
