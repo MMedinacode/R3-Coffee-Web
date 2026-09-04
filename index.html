@@ -20,7 +20,7 @@
     <ul class="nav-links" id="navLinks">
       <li><button class="nav-link active" data-tab="inicio">Inicio</button></li>
       <li><button class="nav-link" data-tab="nosotros">Nosotros</button></li>
-      <li><button class="nav-link" data-tab="locales">Locales</button></li>
+      <li><button class="nav-link" data-tab="locales">Visítanos</button></li>
       <li><button class="nav-link" data-tab="carta">Carta</button></li>
       <li><button class="nav-link" data-tab="resenas">Reseñas</button></li>
     </ul>
@@ -97,9 +97,22 @@
   <div class="wrap">
     <div class="section-head dark">
       <span class="eyebrow">te esperamos</span>
-      <h2>Nuestros 3 locales</h2>
+      <h2>Visítanos</h2>
     </div>
     <div class="loc-cards-grid" id="locCards"></div>
+
+    <div class="loc-social-wrap">
+      <span class="footer-visit-label">Síguenos y revisa la carta</span>
+      <div class="footer-social">
+        <a class="ig" href="https://instagram.com/r3coffee_" target="_blank" rel="noopener" aria-label="Instagram de R3 Coffee">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a class="web" href="https://www.r3coffee.cl" target="_blank" rel="noopener" aria-label="Sitio web r3coffee.cl">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0e1a35" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9Z"/></svg>
+        </a>
+      </div>
+      <p class="loc-social-links"><a href="https://instagram.com/r3coffee_" target="_blank" rel="noopener">@r3coffee_</a> · <a href="https://www.r3coffee.cl" target="_blank" rel="noopener">r3coffee.cl</a></p>
+    </div>
   </div>
 </section>
 </section>
@@ -127,23 +140,26 @@
       <h2>Opiniones de los 3 locales</h2>
     </div>
     <div class="resenas-grid">
-      <div class="resena">
+      <div class="resena" data-loc="miraflores">
         <span class="resena-loc">Miraflores 537</span>
         <div class="stars">★★★★★</div>
         <blockquote>"La gente dice que esta cafetería sirve delicioso café de especialidad, incluyendo flat whites, capuchinos y espresso tonics, así como pasteles como canelés y pastel de limón. Destacan los precios razonables y el ambiente acogedor y agradable. También les gusta el servicio amable y atento que brinda el personal."</blockquote>
         <footer>— Resumen de Google Maps · 4.9 / 5 (916 opiniones)</footer>
+        <a class="resena-write" data-loc-link="miraflores" href="#" target="_blank" rel="noopener">Escribe tu reseña →</a>
       </div>
-      <div class="resena">
+      <div class="resena" data-loc="merced">
         <span class="resena-loc">Merced 649</span>
         <div class="stars">★★★★★</div>
         <blockquote>"Lo mejor del local son los trabajadores, siempre son muy amables, te reciben y hacen los pedidos con muy buena energía. Me gusta mucho el matcha, la leche de avena que usan es muy buena, no me gusta mucho el sabor específico del café que usan, es como sabor frutal o floral que en lo personal no es mi favorito, a mi mamá le encanta, pero en general todo muy rico y ambiente agradable."</blockquote>
         <footer>— Camila Silva, Google Maps · Comida 4 · Servicio 5 · Ambiente 5</footer>
+        <a class="resena-write" data-loc-link="merced" href="#" target="_blank" rel="noopener">Escribe tu reseña →</a>
       </div>
-      <div class="resena">
+      <div class="resena" data-loc="londres">
         <span class="resena-loc">Londres 42</span>
         <div class="stars">★★★★★</div>
         <blockquote>"Los comensales dicen que les gusta el café de alta calidad de esta cafetería, el cual muchos describen como delicioso y bien equilibrado, junto con sabrosos productos de pastelería como pan de queso y croissants. Aprecian también el ambiente agradable y acogedor, y a menudo mencionan el espacio limpio y la buena música. Los clientes elogian constantemente al personal por ser amable, atento y por brindar un servicio excelente."</blockquote>
         <footer>— Resumen de Google Maps · 175 opiniones</footer>
+        <a class="resena-write" data-loc-link="londres" href="#" target="_blank" rel="noopener">Escribe tu reseña →</a>
       </div>
     </div>
   </div>
@@ -163,22 +179,6 @@
       <span class="badge" style="border-color:rgba(250,246,236,0.3); color:rgba(250,246,236,0.85); background:rgba(250,246,236,0.05);">Wi-Fi gratis</span>
     </div>
     <div class="footer-divider"></div>
-
-    <span class="footer-visit-label">Visítanos</span>
-    <div class="footer-visit-grid">
-      <button class="footer-visit-btn" onclick="openLocModal('miraflores')">
-        <span class="fv-name">Miraflores 537</span>
-        <span class="fv-zone">Bellas Artes</span>
-      </button>
-      <button class="footer-visit-btn" onclick="openLocModal('merced')">
-        <span class="fv-name">Merced 649</span>
-        <span class="fv-zone">Santiago Centro</span>
-      </button>
-      <button class="footer-visit-btn" onclick="openLocModal('londres')">
-        <span class="fv-name">Londres 42</span>
-        <span class="fv-zone">Barrio Lastarria</span>
-      </button>
-    </div>
 
     <div class="footer-social">
       <a class="ig" href="https://instagram.com/r3coffee_" target="_blank" rel="noopener" aria-label="Instagram de R3 Coffee">

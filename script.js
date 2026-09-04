@@ -6,7 +6,9 @@ const LOCATIONS = [
     desc:'El local original de R3, chico y encantador, con mesas adentro y en el frontis. Acá empezó todo en 2022.',
     hours:{weekday:[7*60+30,20*60], saturday:[9*60,18*60], sunday:[9*60,18*60]},
     hoursText:'Lunes a viernes 7:30–20:00 · Sábado, domingo y feriados 9:00–18:00',
-    mapsQuery:'Miraflores 537, Santiago'
+    mapsQuery:'Miraflores 537, Santiago',
+    placeId:'0x9662c53018ab2c77:0x6af1dc6fae1697d',
+    embedSrc:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.498123225381!2d-70.6457487!3d-33.43632660000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c53018ab2c77%3A0x6af1dc6fae1697d!2sR3%20Coffee%20Miraflores!5e0!3m2!1ses-419!2scl!4v1788500019957!5m2!1ses-419!2scl'
   },
   {
     key:'merced', name:'Merced 649', zone:'Santiago Centro',
@@ -14,7 +16,9 @@ const LOCATIONS = [
     desc:'Segundo local de la marca, mismo cariño por el grano y la misma atención personalizada de siempre.',
     hours:{weekday:[8*60,18*60], saturday:[9*60,13*60+30], sunday:null},
     hoursText:'Lunes a viernes 8:00–18:00 · Sábado 9:00–13:30 · Domingo y feriados cerrado',
-    mapsQuery:'Merced 649, Santiago'
+    mapsQuery:'Merced 649, Santiago',
+    placeId:'0x9662c5003d29f05d:0xddda555b82067b08',
+    embedSrc:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.4375168074603!2d-70.6464069!3d-33.437906100000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5003d29f05d%3A0xddda555b82067b08!2sR3%20coffee%20Merced%20649!5e0!3m2!1ses-419!2scl!4v1788500106746!5m2!1ses-419!2scl'
   },
   {
     key:'londres', name:'Londres 42', zone:'Barrio Lastarria',
@@ -22,9 +26,13 @@ const LOCATIONS = [
     desc:'El local más nuevo de R3, en pleno barrio Lastarria — mismo tueste, mismo estándar.',
     hours:{weekday:[8*60,19*60+30], saturday:[9*60,14*60], sunday:[9*60,14*60]},
     hoursText:'Lunes a viernes 8:00–19:30 · Sábado, domingo y feriados 9:00–14:00',
-    mapsQuery:'Londres 42, Santiago'
+    mapsQuery:'Londres 42, Santiago',
+    placeId:'0x9662c5006b8f163d:0x136308890731fac4',
+    embedSrc:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.188802556101!2d-70.6481155!3d-33.444387299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5006b8f163d%3A0x136308890731fac4!2sR3%20Coffee%20Londres!5e0!3m2!1ses-419!2scl!4v1788500140025!5m2!1ses-419!2scl'
   }
 ];
+
+function reviewUrl(loc){ return 'https://search.google.com/local/writereview?placeid=' + loc.placeId; }
 
 const locCardsEl = document.getElementById('locCards');
 const LOC_PHOTOS = {
@@ -60,11 +68,16 @@ function openLocModal(key){
   const statusEl = document.getElementById('locModalStatus');
   statusEl.textContent = isOpen ? 'Abierto ahora' : 'Cerrado ahora';
   statusEl.style.color = isOpen ? '#4c7a3f' : '#b6543c';
-  document.getElementById('locModalMap').src = 'https://www.google.com/maps?q=' + encodeURIComponent(loc.mapsQuery) + '&output=embed';
+  document.getElementById('locModalMap').src = loc.embedSrc;
   document.getElementById('locModalDirections').href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(loc.mapsQuery);
   toggleLocModal(true);
 }
 function toggleLocModal(open){ document.getElementById('locModalOverlay').classList.toggle('open', open); }
+
+document.querySelectorAll('[data-loc-link]').forEach(a => {
+  const loc = LOCATIONS.find(l => l.key === a.dataset.locLink);
+  if(loc) a.href = reviewUrl(loc);
+});
 
 function computeStatus(loc){
   const now = new Date();
