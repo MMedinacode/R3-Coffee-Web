@@ -1,0 +1,25 @@
+Carpeta de fotos de R3 Coffee & Roasters.
+
+YA CONECTADAS AL SITIO:
+- logo.jpg              (logo real, en nav / inicio / footer / divisor)
+- hero-bg.png           (fondo del inicio)
+- local-miraflores.png, local-merced.png, local-londres.png
+- galeria-1.png a galeria-4.png (sección "Dentro de la barra")
+- nosotros.png          (foto del equipo)
+- carta-caliente.png, carta-invierno.png, carta-pasteleria.png
+
+Si alguna no es la que querías (sobre todo confirmar que local-miraflores.png
+sea realmente el local de Miraflores 537), avísame y la cambio.
+
+AÚN CON FOTO DE STOCK (no había ninguna foto tuya que calzara bien):
+- Café frío       (categoría "fria" en la carta)
+- Toasts y bowl
+- Sandwiches
+
+Si me pasas fotos para esas 3 categorías, las agrego con el mismo nombre que
+ya usan las otras: carta-fria.jpg, carta-toasts.jpg, carta-sandwiches.jpg
+(y yo actualizo el código para apuntar a ellas).
+
+El resto de las capturas que dejaste (010203, 010226 original, 010236, 010309,
+010351, 010359, 010446) quedaron guardadas en esta carpeta sin usar, por si
+después sirven para reemplazar alguna o agregar más a la galería.

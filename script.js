@@ -28,9 +28,9 @@ const LOCATIONS = [
 
 const locCardsEl = document.getElementById('locCards');
 const LOC_PHOTOS = {
-  miraflores:'https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=800&auto=format&fit=crop',
-  merced:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop',
-  londres:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop'
+  miraflores:'fotos/local-miraflores.png',
+  merced:'fotos/local-merced.png',
+  londres:'fotos/local-londres.png'
 };
 
 LOCATIONS.forEach(loc => {
@@ -48,7 +48,6 @@ LOCATIONS.forEach(loc => {
     </div>`;
   locCardsEl.appendChild(card);
 });
-// FOTOGRAFÍAS DE EJEMPLO: idealmente una foto real por cada local, no una genérica compartida
 
 function openLocModal(key){
   const loc = LOCATIONS.find(l => l.key === key);
@@ -90,6 +89,8 @@ function computeStatus(loc){
 const MENU = {
   caliente: {
     label:'Café caliente',
+    photo:'fotos/carta-caliente.png',
+    blurb:'Espresso, cappuccinos, lattes y filtrados — todos con nuestro propio tueste, molidos al momento en cada local.',
     groups:[{title:'Calientes', items:[
       {n:'Espresso', p:2300},
       {n:'Machiatto', p:2400},
@@ -109,6 +110,8 @@ const MENU = {
   },
   fria: {
     label:'Café frío',
+    photo:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1400&auto=format&fit=crop',
+    blurb:'Cold brew, tónics y matchas helados, ideales para los días de más calor en Santiago Centro.',
     groups:[{title:'Frías', items:[
       {n:'Ice Latte', p:0, d:'Consulta precio del día'},
       {n:'Ice vainilla / caramelo', p:3200},
@@ -125,6 +128,8 @@ const MENU = {
   },
   invierno: {
     label:'Infusiones',
+    photo:'fotos/carta-invierno.png',
+    blurb:'Chai, matcha, chocolate y tés para acompañar los días más fríos, con opción de leches vegetales.',
     groups:[{title:'Invierno', items:[
       {n:'Chai Latte', p:3500},
       {n:'Té e infusiones', p:2500},
@@ -142,6 +147,8 @@ const MENU = {
   },
   pasteleria: {
     label:'Pastelería',
+    photo:'fotos/carta-pasteleria.png',
+    blurb:'Horneados frescos cada día: queques, canelés, financiers y opciones veganas para acompañar tu café.',
     groups:[{title:'Pastelería', items:[
       {n:'Queque zanahoria', p:2300},
       {n:'Queque banana chips', p:2600},
@@ -160,6 +167,8 @@ const MENU = {
   },
   toasts: {
     label:'Toasts y bowl',
+    photo:'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?q=80&w=1400&auto=format&fit=crop',
+    blurb:'Palta, salmón, hummus y más sobre pan de masa madre, con toppings pensados por nuestro equipo.',
     groups:[{title:'Toasts', items:[
       {n:'Clásicas', p:4900, v:1, d:'Palta con toque de pimienta y sal de mar'},
       {n:'Encurtidos', p:5200, v:1, d:'Palta, cebolla morada encurtida y semillas de mostaza by María'},
@@ -174,6 +183,8 @@ const MENU = {
   },
   sandwiches: {
     label:'Sandwiches',
+    photo:'https://images.unsplash.com/photo-1509722747041-616f39b57569?q=80&w=1400&auto=format&fit=crop',
+    blurb:'Sandwiches de mesón, hechos al momento, algunos con recetas propias de nuestro equipo — como los "by María".',
     groups:[{title:'Sandwiches', items:[
       {n:'Caprese', p:6500, v:1, d:'Queso mozzarella, aceituna, pesto, tomate'},
       {n:'Pastrami', p:6800, d:'Pastrami, palta, pickles, cebolla morada by María'},
@@ -204,6 +215,18 @@ catKeys.forEach((key, i) => {
   const panel = document.createElement('div');
   panel.className = 'menu-panel' + (i===0 ? ' active':'');
   panel.id = 'panel-' + key;
+  if(MENU[key].photo){
+    const fig = document.createElement('div');
+    fig.className = 'menu-cat-photo';
+    fig.innerHTML = `<img src="${MENU[key].photo}" alt="${MENU[key].label}">`;
+    panel.appendChild(fig);
+  }
+  if(MENU[key].blurb){
+    const blurb = document.createElement('p');
+    blurb.className = 'menu-cat-blurb';
+    blurb.textContent = MENU[key].blurb;
+    panel.appendChild(blurb);
+  }
   MENU[key].groups.forEach(group => {
     if(group.title && MENU[key].groups.length > 1){
       const h = document.createElement('div');
