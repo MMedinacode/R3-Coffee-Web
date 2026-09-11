@@ -8,6 +8,7 @@ const LOCATIONS = [
     hoursText:'Lunes a viernes 7:30–20:00 · Sábado, domingo y feriados 9:00–18:00',
     mapsQuery:'Miraflores 537, Santiago',
     placeId:'0x9662c53018ab2c77:0x6af1dc6fae1697d',
+    waze:'https://waze.com/ul?ll=-33.4363266,-70.6457487&navigate=yes',
     embedSrc:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.498123225381!2d-70.6457487!3d-33.43632660000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c53018ab2c77%3A0x6af1dc6fae1697d!2sR3%20Coffee%20Miraflores!5e0!3m2!1ses-419!2scl!4v1788500019957!5m2!1ses-419!2scl'
   },
   {
@@ -18,6 +19,7 @@ const LOCATIONS = [
     hoursText:'Lunes a viernes 8:00–18:00 · Sábado 9:00–13:30 · Domingo y feriados cerrado',
     mapsQuery:'Merced 649, Santiago',
     placeId:'0x9662c5003d29f05d:0xddda555b82067b08',
+    waze:'https://waze.com/ul?ll=-33.4379061,-70.6464069&navigate=yes',
     embedSrc:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.4375168074603!2d-70.6464069!3d-33.437906100000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5003d29f05d%3A0xddda555b82067b08!2sR3%20coffee%20Merced%20649!5e0!3m2!1ses-419!2scl!4v1788500106746!5m2!1ses-419!2scl'
   },
   {
@@ -28,6 +30,7 @@ const LOCATIONS = [
     hoursText:'Lunes a viernes 8:00–19:30 · Sábado, domingo y feriados 9:00–14:00',
     mapsQuery:'Londres 42, Santiago',
     placeId:'0x9662c5006b8f163d:0x136308890731fac4',
+    waze:'https://waze.com/ul?ll=-33.4443873,-70.6481155&navigate=yes',
     embedSrc:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.188802556101!2d-70.6481155!3d-33.444387299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5006b8f163d%3A0x136308890731fac4!2sR3%20Coffee%20Londres!5e0!3m2!1ses-419!2scl!4v1788500140025!5m2!1ses-419!2scl'
   }
 ];
@@ -70,6 +73,7 @@ function openLocModal(key){
   statusEl.style.color = isOpen ? '#4c7a3f' : '#b6543c';
   document.getElementById('locModalMap').src = loc.embedSrc;
   document.getElementById('locModalDirections').href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(loc.mapsQuery);
+  document.getElementById('locModalWaze').href = loc.waze;
   toggleLocModal(true);
 }
 function toggleLocModal(open){ document.getElementById('locModalOverlay').classList.toggle('open', open); }
